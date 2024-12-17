@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RivalTeamFinder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo2.png') }}" alt="RivalTeamFinder Logo" class="logo"></a>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('show_register') }}">Registrarse</a></li>
+                <li><a href="{{ url_for('login') }}">Iniciar Sesión</a></li>
+                <li><a href="search.html">Buscar Rivales</a></li>
+                <li><a href="tournaments.html">Torneos</a></li>
+                <li><a href="halloffame.html">Salón de la Fama</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-main">
+        <div class="login-container">
+            <h1>Iniciar Sesión</h1>
+            <form action="{{ url_for('iniciar_sesion') }}" method="POST" class="login-form">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+        
+                <button type="submit" class="btn primary-btn">Iniciar Sesión</button>
+            </form>
+            <p>¿Olvidaste tu contraseña? <a href="#">Recuperar contraseña</a></p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 RivalTeamFinder. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+

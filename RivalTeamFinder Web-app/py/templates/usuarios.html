@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/usuarios.css') }}">
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>Usuarios Registrados</h1>
+        <table class="usuarios-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Habilidad</th>
+                    <th>Ubicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario['nombre'] }}</td>
+                    <td>{{ usuario['correo'] }}</td>
+                    <td>{{ usuario['habilidad'] }}</td>
+                    <td>{{ usuario['ubicacion'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>© 2024 RivalTeamFinder. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rival Team Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buscar.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="header">
+                <h1 class="titulo">RivalTeamFinder</h1>
+            </div>
+            <div class="search-form">
+                <h2>Buscar Rivales</h2>
+                <form action="{{ url_for('buscar_rivales') }}" method="GET">
+                    <input type="text" id="location" name="location" placeholder="Buscar por ubicación">
+                    <input type="text" id="skill" name="skill" placeholder="Nivel de habilidad">
+                    <input type="text" id="age" name="age" placeholder="Edad">
+                    <select id="gender" name="gender">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                    <input type="text" id="sport" name="sport" placeholder="Deporte">
+                    <button type="submit" class="primary-btn">Buscar</button>
+                </form>
+                <div class="resultados-busqueda">
+                    {% if resultados %}
+                        <h2>Resultados de Búsqueda</h2>
+                        <ul>
+                            {% for usuario in resultados %}
+                                <li>{{ usuario.nombre }} - {{ usuario.habilidad }} - {{ usuario.ubicacion }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No se encontraron rivales.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="header">
+                <h1>RivalTeamFinder</h1>
+            </div>
+            <div class="user-profile">
+                <h2>Perfil de Juan</h2>
+                <div class="user-avatar"></div>
+                <p>Edad: 25</p>
+                <p>Nivel: Avanzado</p>
+                <p>Ubicación: Santiago</p>
+                <button class="primary-btn">Enviar Mensaje</button>
+                <button class="secondary-btn">Invitar a Partido</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

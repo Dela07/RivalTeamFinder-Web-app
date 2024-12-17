@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RivalTeamFinder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo2.png') }}" alt="RivalTeamFinder Logo" class="logo"></a>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('show_register') }}">Registrarse</a></li>
+                <li><a href="{{ url_for('login') }}">Iniciar Sesión</a></li>
+                <li><a href="search.html">Buscar Rivales</a></li>
+                <li><a href="tournaments.html">Torneos</a></li>
+                <li><a href="halloffame.html">Salón de la Fama</a></li>
+                <li><a href="settings.html">Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="landing">
+            <h1>Encuentra Rivales Deportivos Cercanos</h1>
+            <p>Regístrate hoy y comienza a jugar con jugadores cercanos a ti.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('show_register') }}" class="btn primary-btn">Regístrate Gratis</a>
+                <a href="login.html" class="btn secondary-btn">Iniciar Sesión</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Cómo Funciona RivalTeamFinder</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <h3>Crear Perfil</h3>
+                    <p>Personaliza tu perfil con tu ubicación, nivel de habilidad y más.</p>
+                </div>
+                <div class="feature">
+                    <h3>Buscar Rivales</h3>
+                    <p>Encuentra oponentes según tus preferencias y ubicación.</p>
+                </div>
+                <div class="feature">
+                    <h3>Organiza Partidos</h3>
+                    <p>Fija partidos y haz apuestas con otros jugadores.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 RivalTeamFinder. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
